@@ -1,11 +1,11 @@
 package lab2;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Arrays;
-import java.util.HashMap;
+import java.util.Map;
 
 public class Solution {
-    private ArrayList<Tour> tours = new ArrayList<Tour>();
+    private List<Tour> tours = new List<Tour>();
 
     public void solve(Problem problem) {
         Depot[] depots = problem.getDepots();
@@ -13,14 +13,14 @@ public class Solution {
 
         Arrays.sort(clients, new SortByOrder()); // orders clients by priority
 
-        HashMap<String, Boolean> visitedClients = new HashMap<String, Boolean>();
+        Map<String, Boolean> visitedClients = new Map<String, Boolean>();
 
         for (Depot depot : depots) { // greedy algorithm to allocate trips to vehicles
             Vehicle[] vehicles = depot.getVehicles();
 
             for (Vehicle vehicle : vehicles) {
                 Tour tour = new Tour();
-                ArrayList<Client> clientsVisited = new ArrayList<Client>();
+                List<Client> clientsVisited = new List<Client>();
 
                 tour.setVehicle(vehicle);
 
