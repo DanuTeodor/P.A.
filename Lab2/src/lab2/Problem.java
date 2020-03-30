@@ -1,6 +1,6 @@
 package lab2;
 
-import java.util.HashMap;
+import java.util.Map;
 
 public class Problem {
     private Depot[] depots;
@@ -15,13 +15,13 @@ public class Problem {
     }
 
     public void setDepots(Depot[] depots) {
-        HashMap<String, Boolean> hashMapDepots = new HashMap<String, Boolean>();
+        Map<String, Boolean> MapDepots = new Map<String, Boolean>();
         for (Depot depot : depots) {
-            if (hashMapDepots.get(depot.getName()) != null) {
+            if (MapDepots.get(depot.getName()) != null) {
                 System.out.println("Nu se poate insersa un depou de 2 ori.");
                 return;
             }
-            hashMapDepots.put(depot.getName(), true);
+            MapDepots.put(depot.getName(), true);
         }
         this.depots = depots;
     }
@@ -31,13 +31,13 @@ public class Problem {
     }
 
     public void setClients(Client[] clients) {
-        HashMap<String, Boolean> hashMapClients = new HashMap<String, Boolean>();
+        Map<String, Boolean> MapClients = new Map<String, Boolean>();
         for (Client client : clients) {
-            if (hashMapClients.get(client.getName()) != null) {
+            if (MapClients.get(client.getName()) != null) {
                 System.out.println("Attempt to insert a client depot denied.");
                 return;
             }
-            hashMapClients.put(client.getName(), true);
+            MapClients.put(client.getName(), true);
         }
         this.clients = clients;
     }
